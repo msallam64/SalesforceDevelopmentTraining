@@ -1,7 +1,7 @@
 @IsTest
 private class TestArrayExample {
     @IsTest
-    static void validateHelloWorld() {
+    static void validateArrayExample() {
 
         Test.startTest();
         ArrayExample arrExample = new ArrayExample();

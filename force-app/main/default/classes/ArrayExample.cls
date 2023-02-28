@@ -4,6 +4,7 @@ public class ArrayExample{
     List<Account> accountsListToUpdate;
     List<Contact> contact;
 
+    //Constructor
     public ArrayExample(){
         this.accounts=[Select id,name,VS_Updated__c from Account];
         this.contact=[Select id,name from Contact];
@@ -11,6 +12,7 @@ public class ArrayExample{
 
     }
 
+    //get all accounts and add it to another list to make any operation (Update,delete,...)
     public void getAccounts(){
         for (Integer i = 0; i < accounts.size(); i++) {
         accountsListToUpdate.add(accounts[i]);
@@ -20,6 +22,7 @@ public class ArrayExample{
         }
     }
 
+    //Update specific field in accounts records
     public void updateAccounts(List<Account> Acc){
         for (Integer i = 0; i < Acc.size(); i++) {
             Acc[i].VS_Updated__c=true; 
