@@ -1,6 +1,7 @@
 trigger ApexTriggerExample on Account (after insert,after update) {
 
     List<Contact> con=new List<Contact>();
+    List<Contact> con2=new List<Contact>();
 
 
     //check if updated ,And field VS_Updated__c is = false ,will create Contact related to this Account
