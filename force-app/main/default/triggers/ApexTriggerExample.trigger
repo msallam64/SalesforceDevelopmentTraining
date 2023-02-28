@@ -18,7 +18,7 @@ trigger ApexTriggerExample on Account (after insert,after update) {
 
     //check if record is inserted will (excute ArrayExample Class) & update VS_Updated__c = true
     if (Trigger.isInsert) {
-        ArrayExample x=new ArrayExample();
+        ArrayExample x = new ArrayExample();
         x.getAccounts();
         
     }
