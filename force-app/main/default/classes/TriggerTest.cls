@@ -8,6 +8,7 @@ private class TriggerTest {
 
         Test.startTest();
 
+
         Test.stopTest();
 
         Account getAccountInserted = [SELECT Name,VS_Updated__c FROM Account WHERE Id =:acct.Id];
