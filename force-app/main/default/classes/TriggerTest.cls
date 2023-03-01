@@ -1,18 +1,21 @@
 @isTest
 private class TriggerTest {
-    static void validateTrigger() {
+    @isTest
+    static void validateInsertTrigger() {
 
         Account acct = new Account(Name='Test Account MAS');
         insert acct;
 
         Test.startTest();
 
-        // Account testAcc=[Select id,VS_Updated__c from Account WHERE id=: acct.get LIMIT 1];
-        // testAcc.Name='MAS Test Trigger';
-        
-        System.assertEquals(acct.VS_Updated__c,true);
+
         Test.stopTest();
 
+        Account getAccountInserted = [SELECT Name,VS_Updated__c FROM Account WHERE Id =:acct.Id];
+
+        System.debug('After Test : ' + getAccountInserted.VS_Updated__c);
+
+        System.assertEquals(true, getAccountInserted.VS_Updated__c);
     }
     
 }
