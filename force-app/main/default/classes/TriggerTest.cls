@@ -1,4 +1,4 @@
-@isTest(SeeAllData=true)
+@isTest
 private class TriggerTest {
     static void validateTrigger() {
 
@@ -9,9 +9,8 @@ private class TriggerTest {
 
         // Account testAcc=[Select id,VS_Updated__c from Account WHERE id=: acct.get LIMIT 1];
         // testAcc.Name='MAS Test Trigger';
-        // System.assertEquals(acct.VS_Updated__c,true);
-            
-
+        
+        System.assertEquals(acct.VS_Updated__c,true);
         Test.stopTest();
 
     }
