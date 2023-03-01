@@ -7,14 +7,14 @@ private class TriggerTest {
         insert acct;
 
         Test.startTest();
-        
+
         Test.stopTest();
 
-        Account C = [SELECT Name,VS_Updated__c FROM Account WHERE Id =:acct.Id];
+        Account getAccountInserted = [SELECT Name,VS_Updated__c FROM Account WHERE Id =:acct.Id];
 
-        System.debug('After Test : ' + C.VS_Updated__c);
+        System.debug('After Test : ' + getAccountInserted.VS_Updated__c);
 
-        System.assertEquals(true, C.VS_Updated__c);
+        System.assertEquals(true, getAccountInserted.VS_Updated__c);
     }
     
 }
